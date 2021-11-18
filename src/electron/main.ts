@@ -13,7 +13,7 @@ const createWindow = () => {
 	// Open the DevTools.
 	if (isDev) {
 		console.log("Running in development");
-		mainWindow.webContents.openDevTools({ mode: "right" });
+		// mainWindow.webContents.openDevTools({ mode: "right" });
 	} else {
 		console.log("Running in production");
 	}

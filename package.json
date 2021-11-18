@@ -20,7 +20,7 @@
 	},
 	"scripts": {
 		"start:parcel": "parcel --public-url ./ --hmr-port 8080 --no-cache ./src/index.html",
-		"start:electron": "electron .",
+		"start:electron": "npm run build-electron-scripts && electron .",
 		"build": "npm run clean && ELECTRON_ENV=production parcel build --public-url ./ --no-cache ./src/index.html",
 		"______spacer______": "echo spacer",
 		"build-electron-scripts": "tsc --project ./src/electron",
