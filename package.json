@@ -1,0 +1,49 @@
+{
+	"name": "electron-boilerplate",
+	"version": "0.0.1",
+	"description": "Roland learns things about electron",
+	"author": "Roland",
+	"___comment1": "Below is to point electron in the right direction",
+	"main": "src/electron/main.js",
+	"license": "MIT",
+	"___comment2": "Below is for parcel (its not really required here) https://parceljs.org/features/targets/",
+	"targets": {
+		"main": false
+	},
+	"devDependencies": {
+		"@electron-forge/cli": "^6.0.0-beta.61",
+		"@electron-forge/maker-deb": "^6.0.0-beta.61",
+		"concurrently": "^6.2.1",
+		"electron": "^13.2.1",
+		"parcel": "^2.0.1"
+	},
+	"scripts": {
+		"start:parcel": "parcel --public-url ./ --hmr-port 8080 --no-cache ./src/index.html",
+		"start:electron": "ELECTRON_ENV=development electron .",
+		"build": "npm run clean && ELECTRON_ENV=production parcel build --public-url ./ --no-cache ./src/index.html",
+		"start:dont-use-ignore-me": "electron-forge start",
+		"make": "npm run build && electron-forge make",
+		"package": "npm run build && electron-forge package",
+		"clean": "rm -Rf dist .parcel-cache out"
+	},
+	"dependencies": {
+		"electron-is-dev": "^2.0.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2"
+	},
+	"engines": {
+		"node": ">= 16"
+	},
+	"browserslist": "> 0.5%, last 2 versions, not dead",
+	"config": {
+		"forge": {
+			"packagerConfig": {},
+			"makers": [
+				{
+					"name": "@electron-forge/maker-deb",
+					"config": {}
+				}
+			]
+		}
+	}
+}
