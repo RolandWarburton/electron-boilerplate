@@ -15,7 +15,8 @@
 		"@electron-forge/maker-deb": "^6.0.0-beta.61",
 		"concurrently": "^6.2.1",
 		"electron": "^13.2.1",
-		"parcel": "^2.0.1"
+		"parcel": "^2.0.1",
+		"typescript": "^4.5.2"
 	},
 	"scripts": {
 		"start:parcel": "parcel --public-url ./ --hmr-port 8080 --no-cache ./src/index.html",
