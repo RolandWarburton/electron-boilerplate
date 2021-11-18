@@ -4,7 +4,7 @@
 	"description": "Roland learns things about electron",
 	"author": "Roland",
 	"___comment1": "Below is to point electron in the right direction",
-	"main": "src/electron/main.js",
+	"main": "./dist-electron/main.js",
 	"license": "MIT",
 	"___comment2": "Below is for parcel (its not really required here) https://parceljs.org/features/targets/",
 	"targets": {
@@ -21,6 +21,8 @@
 		"start:parcel": "parcel --public-url ./ --hmr-port 8080 --no-cache ./src/index.html",
 		"start:electron": "ELECTRON_ENV=development electron .",
 		"build": "npm run clean && ELECTRON_ENV=production parcel build --public-url ./ --no-cache ./src/index.html",
+		"______spacer______": "echo spacer",
+		"build-electron-main-js": "tsc --project ./src/electron",
 		"start:dont-use-ignore-me": "electron-forge start",
 		"make": "npm run build && electron-forge make",
 		"package": "npm run build && electron-forge package",
