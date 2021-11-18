@@ -1,7 +1,5 @@
-// import { app, BrowserWindow } from "electron";
-// import isDev from "electron-is-dev";
-const { app, BrowserWindow } = require("electron");
-const { isDev } = require("electron-is-dev");
+import { app, BrowserWindow } from "electron";
+import isDev from "electron-is-dev";
 
 const createWindow = () => {
 	// Create the browser window.
@@ -28,16 +26,6 @@ app.on("window-all-closed", () => {
 		app.quit();
 	}
 });
-
-// app.whenReady().then(() => {
-// 	createWindow();
-
-// 	app.on("activate", function () {
-// 		// On macOS it's common to re-create a window in the app when the
-// 		// dock icon is clicked and there are no other windows open.
-// 		if (BrowserWindow.getAllWindows().length === 0) createWindow();
-// 	});
-// });
 
 app.on("window-all-closed", function () {
 	app.quit();
