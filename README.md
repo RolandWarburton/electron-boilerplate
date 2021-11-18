@@ -28,12 +28,12 @@ Even though in `src/index.html` appears to have a script tag that loads `./src/i
 Behind the scenes, parcel is actually placing `src/index.html -> dist/index.html` and it changes its script tags to point to the compiled react code.
 
 **WAIT!!!** How does Electron know where to get to `dist`, when our script for `start:electron` is calling `electron .`.
-This is because inside `package.json` there is a `{ main: "dist-electron/main.js" }`, remember back to 3 paragraphs ago when we mentioned `./src/electron/main.js` and that this needs to be compiled. This is compiled with `npm run build-electron-main-js` which just happens to place the compiled code in `./dist-electron/main.js`. Now we know how electron finds the right (compiled) code to run when we call it.
+This is because inside `package.json` there is a `{ main: "dist-electron/main.js" }`, remember back to 3 paragraphs ago when we mentioned `./src/electron/main.js` and that this needs to be compiled. This is compiled with `npm run build-electron-scripts` which just happens to place the compiled code in `./dist-electron/main.js`. Now we know how electron finds the right (compiled) code to run when we call it.
 
 So with that said, we can run these npm scripts in a particular order and get development up and running.
 
 1. Run `npm run start:parcel` to start compiling and watching for changes in our **react** code
-2. Run `npm run build-electron-main-js` to compile the electron main.js file from TS to JS so that we can call it in the next command.
+2. Run `npm run build-electron-scripts` to compile the electron main.js file from TS to JS so that we can call it in the next command.
 3. Run `npm run start:electron` to start the electron app, which runs dist-electron/main.js.
 
 ## Logging
