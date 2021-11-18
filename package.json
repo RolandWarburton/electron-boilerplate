@@ -19,10 +19,10 @@
 	},
 	"scripts": {
 		"start:parcel": "parcel --public-url ./ --hmr-port 8080 --no-cache ./src/index.html",
-		"start:electron": "ELECTRON_ENV=development electron .",
+		"start:electron": "electron .",
 		"build": "npm run clean && ELECTRON_ENV=production parcel build --public-url ./ --no-cache ./src/index.html",
 		"______spacer______": "echo spacer",
-		"build-electron-main-js": "tsc --project ./src/electron",
+		"build-electron-scripts": "tsc --project ./src/electron",
 		"start:dont-use-ignore-me": "electron-forge start",
 		"make": "npm run build && electron-forge make",
 		"package": "npm run build && electron-forge package",
