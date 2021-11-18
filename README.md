@@ -32,8 +32,8 @@ This is because inside `package.json` there is a `{ main: "dist-electron/main.js
 
 So with that said, we can run these npm scripts in a particular order and get development up and running.
 
-1. Run `npm run start:parcel` to start compiling and watching for changes in our **react** code
-2. Run `npm run build-electron-scripts` to compile the electron main.js file from TS to JS so that we can call it in the next command.
+1. Run `npm run build-electron-scripts` to compile the electron main.js file from TS to JS so that we can call it in the next command.
+2. Run `npm run start:parcel` to start compiling and watching for changes in our **react** code
 3. Run `npm run start:electron` to start the electron app, which runs dist-electron/main.js.
 
 ## Logging
